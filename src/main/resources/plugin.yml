@@ -1,6 +1,6 @@
 name: UltimateCashShop
 main: com.minkang.ultimate.cashshop.Main
-version: 1.3.1
+version: 1.4.0
 api-version: 1.16
 softdepend: [Citizens]
 author: Minkang
