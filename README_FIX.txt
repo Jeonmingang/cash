@@ -1,20 +1,18 @@
-[UltimateCashShop] 버킷 오류(=Bukkit 에러) 수정 내역
+# UltimateCashShop (fixed)
+- 마크 1.16.5 / 자바 8
+- `/캐시 보내기 <플레이어> <수량>` 기능 추가
+- 기존 기능 유지: `/캐시`, `/캐시 지급/차감`, `/캐시상점`(열기/등록/취소), Citizens 우클릭 연동(옵션)
 
-1) 원인
- - config.yml 의 messages 블록에 'sent', 'incoming' 키가 최상단에 노출되어 들여쓰기가 깨져 있었습니다.
- - 그 결과 YAML 파싱 에러(InvalidConfigurationException)가 발생했고, 캐시 GUI/명령어 처리 시 버킷 오류로 이어졌습니다.
-   예) while parsing a block mapping ... expected <block end> ...
+## 빌드
+```bash
+mvn -q -e -DskipTests package
+```
+생성물: `target/UltimateCashShop-1.4.1.jar`
 
-2) 수정
- - config.yml 구조를 올바른 YAML 로 정리하고 messages 하위에 송금 관련 메시지 키들을 배치했습니다.
- - /캐시 보내기 로직을 보완하여 잘못된 금액, 자기 자신 송금, 대상 미접속(미가입) 등 예외를 안전하게 처리합니다.
+## 주요 파일
+- `balances.yml` : 유저 캐시
+- `shop.yml` : 상점 슬롯/아이템/가격
+- `links.yml` : Citizens NPC 연결 목록
 
-3) 추가 개선
- - plugin.yml 의 명령어 사용법에 /캐시 보내기 를 명시.
- - CashCommand.java: 보내기/지급/차감 처리부에 숫자 파싱/권한/잔액 검증을 강화.
-
-4) 배포 방법
- - /plugins/UltimateCashShop/config.yml 를 본 소스의 것으로 교체 후 서버 재시작 또는 /reload.
- - 플러그인 중복 주의: plugins 폴더에 UltimateCashShop-*.jar 가 1개만 존재하도록 정리하세요.
-
-Java 8 / Minecraft 1.16.5 (api-version 1.16) 기준.
+## 주의
+- `config.yml` 내 `messages`에 더치기(...) 같은 YAML 문법 오류가 있으면 서버 부팅시 파싱 에러가 납니다. 이번 버전은 유효한 YAML로 교체했습니다.
