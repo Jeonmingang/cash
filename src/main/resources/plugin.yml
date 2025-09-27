@@ -1,6 +1,6 @@
 name: UltimateCashShop
 main: com.minkang.ultimate.cashshop.Main
-version: 1.4.1
+version: 1.4.2
 api-version: "1.16"
 authors: [ "minkang" ]
 website: https://example.com
