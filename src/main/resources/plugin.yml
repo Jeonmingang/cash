@@ -1,8 +1,8 @@
 name: UltimateCashShop
 main: com.minkang.ultimate.cashshop.Main
-version: 1.4.3
-api-version: "1.16"
-authors: [ "minkang" ]
+version: 1.4.4
+api-version: 1.16
+authors: [minkang]
 website: https://example.com
 description: 캐시상점(등록/삭제/열기), 캐시 잔액/지급/차감/보내기, Citizens 연동(옵션)
 
