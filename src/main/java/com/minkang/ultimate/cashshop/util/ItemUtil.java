@@ -32,11 +32,26 @@ public class ItemUtil {
         ItemStack item = base.clone();
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
-            List<String> cl = new ArrayList<>();
-            for (String s : lore) cl.add(color(s));
-            meta.setLore(cl);
+            List<String> outLore = new ArrayList<>();
+            // Preserve original lore if present
+            ItemMeta baseMeta = base.getItemMeta();
+            if (baseMeta != null && baseMeta.hasLore()) {
+                for (String sLine : baseMeta.getLore()) {
+                    outLore.add(sLine);
+                }
+                if (!lore.isEmpty()) {
+                    // Spacer between original lore and overlay
+                    outLore.add("");
+                }
+            }
+            for (String sLine : lore) {
+                outLore.add(color(sLine));
+            }
+            meta.setLore(outLore);
             item.setItemMeta(meta);
         }
+        return item;
+    }
         return item;
     }
 }

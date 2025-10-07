@@ -1,6 +1,6 @@
 name: UltimateCashShop
 main: com.minkang.ultimate.cashshop.Main
-version: 1.4.2
+version: 1.4.3
 api-version: "1.16"
 authors: [ "minkang" ]
 website: https://example.com
@@ -12,7 +12,7 @@ commands:
     usage: "/캐시 | /캐시 <플레이어> | /캐시 랭킹 | /캐시 지급 <플레이어> <수량> | /캐시 차감 <플레이어> <수량> | /캐시 보내기 <플레이어> <수량>"
   캐시상점:
     description: 캐시 상점 열기 및 관리
-    usage: "/캐시상점 | /캐시상점 등록 <슬롯> <가격> <수량> | /캐시상점 취소 <슬롯> | /캐시상점 링크 <NPC_ID> | /캐시상점 링크해제 <NPC_ID>"
+    usage: "/캐시상점 | /캐시상점 등록 <슬롯> <가격> <수량> | /캐시상점 취소 <슬롯> | /캐시상점 링크(연동) <NPC_ID> | /캐시상점 링크해제(연동해제) <NPC_ID>"
 
 permissions:
   ultimate.cashshop.admin:

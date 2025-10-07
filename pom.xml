@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.minkang.ultimate</groupId>
   <artifactId>UltimateCashShop</artifactId>
-  <version>1.4.2</version>
+  <version>1.4.3</version>
   <packaging>jar</packaging>
   <name>UltimateCashShop</name>
   <description>캐시 상점 (등록/삭제/열기) + 캐시 잔액/지급/차감/보내기 + Citizens 연동 (1.16.5 / Java 8)</description>

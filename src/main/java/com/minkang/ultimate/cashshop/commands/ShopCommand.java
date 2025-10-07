@@ -99,13 +99,13 @@ public class ShopCommand implements CommandExecutor {
             return true;
         }
 
-        if (sub.equalsIgnoreCase("링크")) {
+        if (sub.equalsIgnoreCase("링크") || sub.equalsIgnoreCase("연동")) {
             if (!sender.hasPermission("ultimate.cashshop.admin")) {
                 sender.sendMessage(ItemUtil.color("&c권한이 없습니다."));
                 return true;
             }
             if (args.length < 2) {
-                sender.sendMessage(ItemUtil.color("&c사용법: /캐시상점 링크 <NPC_ID>"));
+                sender.sendMessage(ItemUtil.color("&c사용법: /캐시상점 링크(연동) <NPC_ID>"));
                 return true;
             }
             Integer id = parseInt(args[1]);
@@ -120,13 +120,13 @@ public class ShopCommand implements CommandExecutor {
             return true;
         }
 
-        if (sub.equalsIgnoreCase("링크해제")) {
+        if (sub.equalsIgnoreCase("링크해제") || sub.equalsIgnoreCase("연동해제")) {
             if (!sender.hasPermission("ultimate.cashshop.admin")) {
                 sender.sendMessage(ItemUtil.color("&c권한이 없습니다."));
                 return true;
             }
             if (args.length < 2) {
-                sender.sendMessage(ItemUtil.color("&c사용법: /캐시상점 링크해제 <NPC_ID>"));
+                sender.sendMessage(ItemUtil.color("&c사용법: /캐시상점 링크해제(연동해제) <NPC_ID>"));
                 return true;
             }
             Integer id = parseInt(args[1]);
@@ -142,7 +142,7 @@ public class ShopCommand implements CommandExecutor {
         }
 
         // Fallback
-        sender.sendMessage(ItemUtil.color("&c사용법: /캐시상점 | /캐시상점 등록 <슬롯> <가격> <수량> | /캐시상점 취소 <슬롯> | /캐시상점 링크 <NPC_ID> | /캐시상점 링크해제 <NPC_ID>"));
+        sender.sendMessage(ItemUtil.color("&c사용법: /캐시상점 | /캐시상점 등록 <슬롯> <가격> <수량> | /캐시상점 취소 <슬롯> | /캐시상점 링크(연동) <NPC_ID> | /캐시상점 링크해제(연동해제) <NPC_ID>"));
         return true;
     }
 
