@@ -26,10 +26,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: UltimateCashShop-jar
-          path: target/*.jar
-
-      - name: List artifacts
-        if: always()
-        run: |
-          echo "Contents of target:"
-          ls -al target || true
+          path: target/UltimateCashShop-*.jar
