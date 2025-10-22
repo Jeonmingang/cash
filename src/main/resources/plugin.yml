@@ -1,6 +1,6 @@
 name: UltimateCashVoucher
 main: com.minkang.ultimate.cashvoucher.VoucherPlugin
-version: 1.0.0
+version: 1.0.1-j8
 api-version: 1.16
 authors: [minkang]
 website: https://example.com

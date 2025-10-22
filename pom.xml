@@ -6,14 +6,14 @@
 
   <groupId>com.minkang.ultimate</groupId>
   <artifactId>UltimateCashVoucher</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-j8</version>
   <packaging>jar</packaging>
   <name>UltimateCashVoucher</name>
   <description>OP-only '/캐시권 &lt;금액&gt;' to create cash vouchers redeemable only with main-hand right-click in air. Integrates with UltimateCashShop BalanceStore.</description>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
