@@ -1,17 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.minkang.ultimate</groupId>
-  <artifactId>UltimateCashShop</artifactId>
-  <version>1.4.4</version>
+  <artifactId>UltimateCashVoucher</artifactId>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
-  <name>UltimateCashShop</name>
-  <description>캐시 상점 (등록/삭제/열기) + 캐시 잔액/지급/차감/보내기 + Citizens 연동 (1.16.5 / Java 8)</description>
+  <name>UltimateCashVoucher</name>
+  <description>OP-only '/캐시권 &lt;금액&gt;' to create cash vouchers redeemable only with main-hand right-click in air. Integrates with UltimateCashShop BalanceStore.</description>
 
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -40,60 +42,28 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.11.0</version>
         <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-          <encoding>${project.build.sourceEncoding}</encoding>
+          <source>11</source>
+          <target>11</target>
+          <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.4</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <phase>package</phase>
             <goals><goal>shade</goal></goals>
+            <configuration>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <minimizeJar>false</minimizeJar>
+            </configuration>
           </execution>
         </executions>
-        <configuration>
-          <createDependencyReducedPom>false</createDependencyReducedPom>
-          <shadedArtifactAttached>false</shadedArtifactAttached>
-          <relocations/>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.2.0</version>
-        <configuration>
-          <encoding>${project.build.sourceEncoding}</encoding>
-          <useDefaultDelimiters>true</useDefaultDelimiters>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.2.0</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-            </manifest>
-            <manifestEntries>
-              <Built-By>UltimateCashShop</Built-By>
-            </manifestEntries>
-          </archive>
-        </configuration>
       </plugin>
     </plugins>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>false</filtering>
-      </resource>
-    </resources>
   </build>
 </project>
